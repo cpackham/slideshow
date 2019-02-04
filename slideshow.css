@@ -1,35 +1,19 @@
 body {
-   background-color: gray;
-   font-family: Arial, sans-serif;
+  background-image: radial-gradient(gray, lightgray);
+  font-family: Arial, sans-serif;
+  font-size: small;
 }
 
-#controls {
-  border: 1px solid black;
-  text-align: center;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  margin:0 auto;
-  padding-bottom: 10px;
-  z-index: 1;
+div#buttons {
+  margin: auto;
+  width: 25%;
 }
 
-#slideshow {
-    position: relative;
-    width: 300px;
-    height: 510px;
-    padding: 10px;
-}
-
-#slideshow > div {
-    position: absolute;
-    text-align: center;
-    overflow: visible;
-    display: none;
-}
-
-#slideshow > div > img {
-    border: 2px solid white;
-    box-shadow: 0 0 20px white;
-}
+.container { height: 680px }
+.cycle-slideshow { width: 100%; height: 100% }
+.cycle-slideshow img {
+  width: auto;
+  height: 100%;
+  border: 1px solid white;
+  box-shadow: 0 0 10px white;
+ }

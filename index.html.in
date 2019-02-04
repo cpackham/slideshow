@@ -2,54 +2,29 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="slideshow.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="@JQUERY_MIN_JS@"></script>
+  <script src="jquery.cycle2.min.js"></script>
+  <script src="jquery.cycle2.center.js"></script>
 </head>
 
 <body>
-<div id="controls">
-  <h2>Slideshow Options</h2>
-  <p><label>Delay (seconds):</label>
-  <Select id="interval">
-    <option value="1000">1</option>
-    <option value="2000">2</option>
-    <option value="3000">3</option>
-    <option value="4000">4</option>
-    <option value="5000" selected>5</option>
-    <option value="6000">6</option>
-    <option value="7000">7</option>
-    <option value="8000">8</option>
-    <option value="9000">9</option>
-    <option value="10000">10</option>
-  </Select>
-  Order:
-  <label for"forward">Forward</label><input name="order" value="forward" type="radio" checked />
-  <label for"reverse">Reverse</label><input name="order" value="reverse" type="radio" />
-  <label for"shuffle">Shuffle</label><input name="order" value="shuffle" type="radio" />
-  <label for"random">Random</label><input name="order" value="random" type="radio" />
-  Effect:
-  <label for"slide">Slide</label><input type="radio" name="effect" value="slide">
-  <label for"slide">Fade</label><input type="radio" name="effect" value="fade" checked>
-  <label for"transitionTime">Transition Time (ms)</label>
-  <Select id="transitionTime">
-    <option value="500">500</option>
-    <option value="1000" selected>1000</option>
-    <option value="1500">1500</option>
-    <option value="2000">2000</option>
-    <option value="2500">2500</option>
-    <option value="3000">3000</option>
-  </Select>
-  </p>
-  <button id="start">Start Slideshow</button>
-  <button id="pause">Pause Slideshow</button>
-  <button id="stop">Stop Slideshow</button>
+<div class="container">
+<div class="cycle-slideshow"
+  data-cycle-speed="500"
+  data-cycle-auto-height="container"
+  data-cycle-center-horz=true
+  data-cycle-center-vert=true
+  >
+  @SLIDESHOW@
+</div>
 </div>
 
-<div id="slideshow">
-@SLIDESHOW@
+<div id=buttons>
+  <button data-cycle-cmd="prev">Prev</button>
+  <button data-cycle-cmd="next">Next</button>
+  <button data-cycle-cmd="pause">Pause</button>
+  <button data-cycle-cmd="resume">Resume</button>
 </div>
 
-<button id="hide">-</button>
-
-<script async type="text/javascript" src="slideshow.js"></script>
 </body>
 </html>
