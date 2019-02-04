@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="slideshow.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <script src="@JQUERY_MIN_JS@"></script>
-  <script src="jquery.cycle2.min.js"></script>
-  <script src="jquery.cycle2.center.js"></script>
+  <script src="@JQUERY_CYCLE2_JS@"></script>
+  <script src="@JQUERY_CYCLE2_CENTER_JS@"></script>
 </head>
 
 <body>
