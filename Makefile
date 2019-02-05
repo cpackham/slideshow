@@ -11,15 +11,18 @@ ifeq ($(V),)
 Q=@
 endif
 
-%.html: %.html.in
+%.html: %.html.in stylesheet.css Makefile
+	@printf "SED\t$@\n"
 	$(Q)$(SED) \
 		-e 's|@JQUERY_MIN_JS@|$(JQUERY_MIN_JS)|' \
 		-e 's|@JQUERY_CYCLE2_JS@|$(JQUERY_CYCLE2_JS)|' \
 		-e 's|@JQUERY_CYCLE2_CENTER_JS@|$(JQUERY_CYCLE2_CENTER_JS)|' \
 		-e 's|@SLIDESHOW@|$(SLIDESHOW)|' \
-		$^ >$@
+		$< >$@
 
-all: stylesheet.css Makefile index.html
+all: index.html
 
 clean:
 	$(Q)rm -f index.html
+
+.PHONY: all clean
