@@ -25,10 +25,10 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container" id="container">
 <div class="cycle-slideshow" id="slideshow"
   data-cycle-speed="500"
-  data-cycle-auto-height="container"
+  data-cycle-auto-height="#container"
   data-cycle-center-horz=true
   data-cycle-center-vert=true
   data-cycle-random=true
