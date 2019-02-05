@@ -1,4 +1,5 @@
 SED ?= sed
+SRC ?= images
 JQUERY_MIN_JS ?= jquery-3.3.1.min.js
 JQUERY_CYCLE2_JS ?= jquery.cycle2.min.js
 JQUERY_CYCLE2_CENTER_JS ?= jquery.cycle2.center.js
