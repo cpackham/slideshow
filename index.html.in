@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <script src="@JQUERY_MIN_JS@"></script>
   <script src="@JQUERY_CYCLE2_JS@"></script>
   <script src="@JQUERY_CYCLE2_CENTER_JS@"></script>
+  <script>
+    $(document.documentElement).keyup(function (event) {
+      if (event.key == "ArrowLeft") {
+        $('.cycle-slideshow').cycle('prev');
+      } else if (event.key == "ArrowRight") {
+        $('.cycle-slideshow').cycle('next');
+      } else if (event.key == " ") {
+	var paused = $('#slideshow').is('.cycle-paused');
+	if (paused) {
+	  $('.cycle-slideshow').cycle('resume');
+	} else {
+	  $('.cycle-slideshow').cycle('pause');
+        }
+      }
+    });
+  </script>
 </head>
 
 <body>
 <div class="container">
-<div class="cycle-slideshow"
+<div class="cycle-slideshow" id="slideshow"
   data-cycle-speed="500"
   data-cycle-auto-height="container"
   data-cycle-center-horz=true
   data-cycle-center-vert=true
+  data-cycle-random=true
   >
   @SLIDESHOW@
 </div>
-</div>
-
-<div id=buttons>
-  <button data-cycle-cmd="prev">Prev</button>
-  <button data-cycle-cmd="next">Next</button>
-  <button data-cycle-cmd="pause">Pause</button>
-  <button data-cycle-cmd="resume">Resume</button>
 </div>
 
 </body>
