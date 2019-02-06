@@ -1,6 +1,7 @@
 SED ?= sed
 TAR ?= tar
 SRC ?= images
+CURL ?= curl -s
 JQUERY_MIN_JS ?= jquery-3.3.1.min.js
 JQUERY_CYCLE2_JS ?= jquery.cycle2.min.js
 JQUERY_CYCLE2_CENTER_JS ?= jquery.cycle2.center.min.js
@@ -37,4 +38,9 @@ clean:
 
 dist: slideshow.tar.gz
 
-.PHONY: all clean dist
+fetch:
+	$(Q)$(CURL) https://code.jquery.com/jquery-3.3.1.min.js >$(JQUERY_MIN_JS)
+	$(Q)$(CURL) http://malsup.github.io/min/jquery.cycle2.min.js >$(JQUERY_CYCLE2_JS)
+	$(Q)$(CURL) http://malsup.github.io/min/jquery.cycle2.center.min.js >$(JQUERY_CYCLE2_CENTER_JS)
+
+.PHONY: all clean dist fetch
