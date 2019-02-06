@@ -1,4 +1,5 @@
 SED ?= sed
+TAR ?= tar
 SRC ?= images
 JQUERY_MIN_JS ?= jquery-3.3.1.min.js
 JQUERY_CYCLE2_JS ?= jquery.cycle2.min.js
@@ -23,7 +24,17 @@ endif
 
 all: index.html
 
-clean:
-	$(Q)rm -f index.html
+slideshow.tar.gz: index.html
+	@printf "TAR\t$@\n"
+	$(Q)$(TAR) -czf $@ index.html stylesheet.css \
+		$(JQUERY_MIN_JS) \
+		$(JQUERY_CYCLE2_JS) \
+		$(JQUERY_CYCLE2_CENTER_JS) \
+		$(SRC)/*.jpg $(SRC)/*.JPG
 
-.PHONY: all clean
+clean:
+	$(Q)rm -f index.html slideshow.tar.gz
+
+dist: slideshow.tar.gz
+
+.PHONY: all clean dist
