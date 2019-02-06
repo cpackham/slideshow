@@ -3,7 +3,7 @@ TAR ?= tar
 SRC ?= images
 JQUERY_MIN_JS ?= jquery-3.3.1.min.js
 JQUERY_CYCLE2_JS ?= jquery.cycle2.min.js
-JQUERY_CYCLE2_CENTER_JS ?= jquery.cycle2.center.js
+JQUERY_CYCLE2_CENTER_JS ?= jquery.cycle2.center.min.js
 
 SNIPPET = <img src="$(1)" alt="$(1)">\n
 FILES = $(shell find $(SRC) -name '*.jpg' -o -name '*.JPG' | $(SED) 's| |%20|g')
